@@ -8,18 +8,13 @@
     <Option compiler="gcc"/>
     <Build>
       <Target title="ConsoleApp | Debug">
-        <Option output="bin/Debug/HelloBCR2000"
-                prefix_auto="1"
+        <Option output="bin/Debug/HelloBCR2000.exe"
+                prefix_auto="0"
                 extension_auto="0"/>
         <Option object_output="obj/Debug"/>
         <Option type="1"/>
         <Option compiler="gcc"/>
         <Compiler>
-          <Add option="-m64"/>
-          <Add option="-O0"/>
-          <Add option="-std=c++11"/>
-          <Add option="-mstackrealign"/>
-          <Add option="-g"/>
           <Add option="-D__MINGW__=1"/>
           <Add option="-D__MINGW_EXTENSION="/>
           <Add option="-DDEBUG=1"/>
@@ -34,6 +29,11 @@
           <Add option="-DJucePlugin_Build_RTAS=0"/>
           <Add option="-DJucePlugin_Build_AAX=0"/>
           <Add option="-DJucePlugin_Build_Standalone=0"/>
+          <Add option="-m64"/>
+          <Add option="-O0"/>
+          <Add option="-std=c++11"/>
+          <Add option="-mstackrealign"/>
+          <Add option="-g"/>
           <Add directory="."/>
           <Add directory="../../JuceLibraryCode"/>
           <Add directory="C:/JUCE/modules"/>
@@ -56,17 +56,13 @@
         </Linker>
       </Target>
       <Target title="ConsoleApp | Release">
-        <Option output="bin/Release/HelloBCR2000"
-                prefix_auto="1"
+        <Option output="bin/Release/HelloBCR2000.exe"
+                prefix_auto="0"
                 extension_auto="0"/>
         <Option object_output="obj/Release"/>
         <Option type="1"/>
         <Option compiler="gcc"/>
         <Compiler>
-          <Add option="-m64"/>
-          <Add option="-O3"/>
-          <Add option="-std=c++11"/>
-          <Add option="-mstackrealign"/>
           <Add option="-D__MINGW__=1"/>
           <Add option="-D__MINGW_EXTENSION="/>
           <Add option="-DNDEBUG=1"/>
@@ -80,6 +76,10 @@
           <Add option="-DJucePlugin_Build_RTAS=0"/>
           <Add option="-DJucePlugin_Build_AAX=0"/>
           <Add option="-DJucePlugin_Build_Standalone=0"/>
+          <Add option="-m64"/>
+          <Add option="-O3"/>
+          <Add option="-std=c++11"/>
+          <Add option="-mstackrealign"/>
           <Add directory="."/>
           <Add directory="../../JuceLibraryCode"/>
           <Add directory="C:/JUCE/modules"/>
@@ -115,9 +115,19 @@
       <Add library="kernel32"/>
       <Add library="comctl32"/>
     </Linker>
+    <Unit filename="../../Source/BCR2000Primitives.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+    </Unit>
     <Unit filename="../../Source/Main.cpp">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
+    </Unit>
+    <Unit filename="../../Source/BCR2000Primitives.hpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
     </Unit>
     <Unit filename="C:/JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h">
       <Option target="ConsoleApp | Debug"/>
@@ -2039,12 +2049,6 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="C:/JUCE/modules/juce_core/containers/juce_ListenerList.cpp">
-      <Option target="ConsoleApp | Debug"/>
-      <Option target="ConsoleApp | Release"/>
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
     <Unit filename="C:/JUCE/modules/juce_core/containers/juce_ListenerList.h">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
@@ -3551,6 +3555,12 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="C:/JUCE/modules/juce_data_structures/values/juce_ValueWithDefault.h">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="C:/JUCE/modules/juce_data_structures/juce_data_structures.cpp">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
@@ -4062,6 +4072,12 @@
       <Option link="0"/>
     </Unit>
     <Unit filename="C:/JUCE/modules/juce_graphics/geometry/juce_Line.h">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_graphics/geometry/juce_Parallelogram.h">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
       <Option compile="0"/>
@@ -5135,6 +5151,18 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/filebrowser/juce_ContentSharer.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/filebrowser/juce_ContentSharer.h">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_basics/filebrowser/juce_DirectoryContentsDisplayComponent.cpp">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
@@ -5435,6 +5463,36 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/layout/juce_Grid.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/layout/juce_Grid.h">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/layout/juce_GridItem.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/layout/juce_GridItem.h">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/layout/juce_GridUnitTests.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_basics/layout/juce_GroupComponent.cpp">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
@@ -5502,6 +5560,18 @@
       <Option link="0"/>
     </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_basics/layout/juce_ScrollBar.h">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/layout/juce_SidePanel.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/layout/juce_SidePanel.h">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
       <Option compile="0"/>
@@ -5634,6 +5704,18 @@
       <Option link="0"/>
     </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_basics/lookandfeel/juce_LookAndFeel_V4.h">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/menus/juce_BurgerMenuComponent.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/menus/juce_BurgerMenuComponent.h">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
       <Option compile="0"/>
@@ -5831,6 +5913,12 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/native/juce_android_ContentSharer.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_basics/native/juce_android_FileChooser.cpp">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
@@ -5838,6 +5926,24 @@
       <Option link="0"/>
     </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_basics/native/juce_android_Windowing.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/native/juce_common_MimeTypes.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/native/juce_ios_ContentSharer.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_basics/native/juce_ios_FileChooser.mm">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
       <Option compile="0"/>
@@ -6491,6 +6597,12 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_extra/embedding/juce_AndroidViewComponent.h">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_extra/embedding/juce_NSViewComponent.h">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
@@ -6587,6 +6699,18 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_extra/misc/juce_PushNotifications.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_extra/misc/juce_PushNotifications.h">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_extra/misc/juce_RecentlyOpenedFilesList.cpp">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
@@ -6629,7 +6753,25 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_extra/native/juce_android_PushNotifications.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_extra/native/juce_android_WebBrowserComponent.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_extra/native/juce_AndroidViewComponent.cpp">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_extra/native/juce_ios_PushNotifications.cpp">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
       <Option compile="0"/>
@@ -6672,6 +6814,12 @@
       <Option link="0"/>
     </Unit>
     <Unit filename="C:/JUCE/modules/juce_gui_extra/native/juce_mac_NSViewComponent.mm">
+      <Option target="ConsoleApp | Debug"/>
+      <Option target="ConsoleApp | Release"/>
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="C:/JUCE/modules/juce_gui_extra/native/juce_mac_PushNotifications.cpp">
       <Option target="ConsoleApp | Debug"/>
       <Option target="ConsoleApp | Release"/>
       <Option compile="0"/>

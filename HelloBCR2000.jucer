@@ -3,11 +3,15 @@
 <JUCERPROJECT id="NkyclS" name="HelloBCR2000" displaySplashScreen="1" reportAppUsage="1"
               splashScreenColour="Dark" projectType="consoleapp" version="1.0.0"
               bundleIdentifier="com.yourcompany.HelloBCR2000" includeBinaryInAppConfig="1"
-              cppLanguageStandard="11" jucerVersion="5.1.1">
+              cppLanguageStandard="11" jucerVersion="5.2.1">
   <MAINGROUP id="H9lxov" name="HelloBCR2000">
     <GROUP id="{4C79EC4E-807B-844B-D7FA-CCCFC38DD3DD}" name="Source">
+      <FILE id="LgVRmz" name="BCR2000Primitives.cpp" compile="1" resource="0"
+            file="Source/BCR2000Primitives.cpp"/>
       <FILE id="PARWZU" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>
+    <FILE id="TivbeB" name="BCR2000Primitives.hpp" compile="0" resource="0"
+          file="Source/BCR2000Primitives.hpp"/>
   </MAINGROUP>
   <EXPORTFORMATS>
     <VS2013 targetFolder="Builds/VisualStudio2013">
